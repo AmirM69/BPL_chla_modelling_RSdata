@@ -1,0 +1,8 @@
+output=C:\Users\amchegoo\BPL_thesis\Data\Processed_sat-2014-2019-2
+limit=50.55,-105.8,50.77139,-105.3
+l2w_parameters= rhot_*, rhorc_*, rhos_*, Rrs_*, spm_nechad2016, t_nechad2016, chl_re_mishra, fai, a443_qaasw, a490_qaasw, a560_qaasw, a665_qaasw, bbp443_qaasw, bbp490_qaasw, bbp560_qaasw, bbp665_qaasw,kd443_qaasw, kd490_qaasw, kd560_qaasw, kd665_qaasw, kdpar_qaasw	
+s2_target_res=60
+glint_correction=True
+elevation=520
+l2w_mask_threshold=0.036
+map_l2w=True
