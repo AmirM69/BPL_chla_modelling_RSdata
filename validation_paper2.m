@@ -22,13 +22,13 @@ axis square
 grid on
 box on
 
-xlabel('In-vitro chla (mg/m^3)', 'fontsize', 14);
+xlabel('Measured chla (mg/m^3)', 'fontsize', 12);
 %ylabel('Factory-calibrated chla (mg/m^3)', 'fontsize', 12);
-ylabel('RS Predicted chla (mg/m^3)', 'fontsize', 14);
+ylabel('Predicted chla (mg/m^3)', 'fontsize', 12);
 
 %legend('chl_P_{chl} vs. chl_M', '1:1 line', 'fontsize', 12, 'location' , 'southeast');
 %legend('chl_P_{pc} vs. chl_M', '1:1 line', 'fontsize', 12, 'location' , 'southeast');
-legend('chl_P^{RS} vs. chl_M', '1:1 line', 'fontsize', 14, 'location' , 'southeast');
+legend('chl_P vs. chl_M', '1:1 line', 'fontsize', 12, 'location' , 'southeast');
 
 MAE = 10^errperf(log10(X), log10(Y),'mae');
 Bias = 10^errperf(log10(X), log10(Y),'bias');      %% be careful about the order of inputs for this metric to be consistent with the equation in the paper, for paper 2 swap X and Y in this equation to have comparable results with Pahlevan
@@ -40,14 +40,14 @@ correlation = corrcoef(log10(X),log10(Y));
 rho = correlation(2);
 
 % text(0.05, 0.85, ['f = ' eq],'Units','normalized','Interpreter', 'none', 'FontSize', 11)
-text(0.05, 0.95, ['N = ' num2str(length(X))],'Units','normalized', 'Interpreter', 'tex', 'FontSize', 13)
+text(0.05, 0.95, ['N = ' num2str(length(X))],'Units','normalized', 'Interpreter', 'tex', 'FontSize', 12)
 %text(0.05, 0.90, ['\rho = ' num2str(round(rho,2))],'Units','normalized', 'FontSize', 11)
 % text(0.05, 0.90, ['r^2 = ' num2str(round(n.rsquare,2))],'Units','normalized', 'FontSize', 11)
 for i = 1:length(metrics)
 %     if i ==2 
 %             text(0.05, 0.95 - (0.05)*i   , [char(metrics(i,1)) ' = ' char(string((cell2mat(metrics(i,2)))))],'Units','normalized', 'Interpreter', 'none', 'FontSize', 11)
 %     else
-    text(0.05, 0.95 - (0.06)*i   , [char(metrics(i,1)) ' = ' char(string((round(cell2mat(metrics(i,2)),2))))],'Units','normalized', 'Interpreter', 'none', 'FontSize', 13)
+    text(0.05, 0.95 - (0.06)*i   , [char(metrics(i,1)) ' = ' char(string((round(cell2mat(metrics(i,2)),2))))],'Units','normalized', 'Interpreter', 'none', 'FontSize', 12)
 end
 %text(0.05, 0.65, ['\rho = ' num2str(round(rho,2))],'Units','normalized', 'FontSize', 11)
 
